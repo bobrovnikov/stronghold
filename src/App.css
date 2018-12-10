@@ -1,0 +1,10 @@
+.gold {
+    color: #f0af02;
+    font-weight: bold;
+}
+
+.book {
+    width: 400px;
+    border: 3px solid #ac6200;
+    background: #fff9c4;
+}
