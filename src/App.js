@@ -4,6 +4,7 @@ import moment from 'moment';
 import Taxes from './Taxes';
 import TaxControl from "./TaxControl";
 import Book from "./Book";
+import _ from 'lodash';
 
 class App extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class App extends Component {
   nextMonth = () => {
       this.setState(state => ({
           date: state.date.add(1, 'months'),
-          popularity: state.popularity + this.getPopularityChange(),
+          popularity: _.clamp(state.popularity + this.getPopularityChange(), 0, 100),
           gold: state.gold + Math.floor(state.totalPopulation * state.taxes.goldPerPerson)
       }))
   };
