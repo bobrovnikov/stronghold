@@ -19,10 +19,6 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-      console.log({Taxes});
-  }
-
   addHovel = () => {
     this.setState(state => ({
       hovels: state.hovels + 1,
