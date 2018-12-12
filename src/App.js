@@ -41,7 +41,7 @@ class App extends Component {
       this.setState(state => ({
           date: state.date.add(1, 'months'),
           popularity: _.clamp(state.popularity + this.getPopularityChange(), 0, 100),
-          gold: state.gold + Math.floor(state.totalPopulation * state.taxes.goldPerPerson)
+          gold: _.max([0, state.gold + Math.floor(state.totalPopulation * state.taxes.goldPerPerson)])
       }))
   };
 
